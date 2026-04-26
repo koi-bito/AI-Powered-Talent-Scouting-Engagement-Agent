@@ -1,6 +1,23 @@
 name,skills,experience_years,interest_level
-Jane Smith,"Python, Machine Learning, TensorFlow",5,high
-John Doe,"Java, Spring Boot, AWS",3,medium
-Alex Johnson,"React, Node.js, MongoDB",4,low
-Priya Kapoor,"Data Science, SQL, Python",6,high
-Michael Brown,"DevOps, Docker, Kubernetes",7,medium
+Jane Smith,"Python, Machine Learning, TensorFlow, PyTorch, SQL",6,high
+John Doe,"Java, Spring Boot, AWS, Docker, Kubernetes",5,medium
+Alex Johnson,"React, Node.js, MongoDB, Express, JavaScript",4,low
+Priya Kapoor,"Data Science, SQL, Python, Pandas, Scikit-learn",7,high
+Michael Brown,"DevOps, Docker, Kubernetes, Jenkins, Terraform",8,medium
+Sarah Connor,"Python, Flask, FastAPI, PostgreSQL, REST APIs",5,high
+Leo Messi,"JavaScript, Vue.js, Tailwind CSS, Firebase",3,medium
+Maria Garcia,"Java, Hibernate, Spring MVC, MySQL, Oracle",9,low
+David Wilson,"C++, Algorithms, System Design, Linux",10,medium
+Sophia Lee,"React, Redux, GraphQL, TypeScript, Jest",4,high
+James Bond,"Cybersecurity, Penetration Testing, Ethical Hacking, SIEM",6,medium
+Emma Watson,"UI/UX Design, Figma, Adobe XD, Prototyping",5,high
+Chris Evans,"Blockchain, Solidity, Ethereum, Smart Contracts",4,low
+Nina Dobrev,"Digital Marketing, SEO, SEM, Google Ads, Analytics",5,medium
+Tom Hardy,"Game Development, Unity, C#, VR",4,low
+Zendaya Maree,"Content Writing, SEO, WordPress, Copywriting",3,high
+Ryan Reynolds,"Salesforce, CRM, Apex, Lightning Components",6,medium
+Millie Bobby,"Cloud Architecture, GCP, Azure, Automation",7,high
+Timothée Chalamet,"iOS Development, Swift, SwiftUI, Xcode",4,medium
+Anya Taylor-Joy,"Android Development, Kotlin, Firebase, REST APIs",3,high
+Robert Downey,"AI Research, NLP, Transformers, PyTorch",8,high
+Scarlett Johansson,"Frontend, HTML, CSS, Sass, Bootstrap",2,medium
