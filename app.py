@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 import os
 import pandas as pd
-from matcher import match_with_jd_gemini
+from matcher import match_with_jd
 from chatbot import engage
 
 app = Flask(__name__)
@@ -34,13 +34,11 @@ def rank():
             "interest_level": row["interest_level"]
         })
 
-    # Use Gemini-based matching
-    match_scores = match_with_jd_gemini(jd, candidates)
+    match_scores = match_with_jd(jd, candidates)
 
     ranked = []
     for i, cand in enumerate(candidates):
-        # Use Gemini-based engagement
-        interest_text = engage(cand, jd)
+        interest_text = engage(cand)
         interest_map = {"high": 90, "medium": 60, "low": 30}
         interest_score = interest_map.get(cand["interest_level"], 60)
         final_score = 0.7 * match_scores[i] * 100 + 0.3 * interest_score
@@ -48,8 +46,7 @@ def rank():
             "name": cand["name"],
             "match_score": round(match_scores[i] * 100, 2),
             "interest_score": interest_score,
-            "final_score": round(final_score, 2),
-            "engagement": interest_text
+            "final_score": round(final_score, 2)
         })
 
     ranked.sort(key=lambda x: x["final_score"], reverse=True)
