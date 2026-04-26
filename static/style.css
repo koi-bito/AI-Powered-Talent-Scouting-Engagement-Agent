@@ -1,0 +1,22 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+}
+textarea, input[type="file"] {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+table {
+  margin-top: 1rem;
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  padding: 0.5rem;
+  text-align: left;
+  border: 1px solid #ccc;
+}
