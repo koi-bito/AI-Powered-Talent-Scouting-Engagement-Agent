@@ -1,10 +1,24 @@
-from sklearn.feature_extraction.text import TfidfVectorizer
+import google.generativeai as genai
 from sklearn.metrics.pairwise import cosine_similarity
+import numpy as np
 
-def match_with_jd(job_desc, candidates):
-    # Combine all candidate skills into strings
-    skills_list = [' '.join(c['skills']) for c in candidates]
-    vectorizer = TfidfVectorizer()
-    tfidf_matrix = vectorizer.fit_transform([job_desc] + skills_list)
-    similarities = cosine_similarity(tfidf_matrix[0], tfidf_matrix[1:])
-    return similarities.flatten()
+# Configure API key (replace with yours)
+genai.configure(api_key="YOUR_GEMINI_API_KEY")
+
+def get_embedding(text):
+    result = genai.embed_content(
+        model="models/embedding-001",
+        content=text,
+        task_type="retrieval_document"
+    )
+    return result['embedding']
+
+def match_with_jd_gemini(job_desc, candidates):
+    try:
+        job_emb = get_embedding(job_desc)
+        cand_embs = [get_embedding(' '.join(c['skills'])) for c in candidates]
+        scores = [cosine_similarity([job_emb], [emb])[0][0] for emb in cand_embs]
+        return np.array(scores)
+    except Exception as e:
+        print("Error in matching:", e)
+        return np.zeros(len(candidates))
